@@ -1,0 +1,6 @@
+print("The sum of 27.5 and 2 is", 27.5 + 2)
+print("The difference between 27.5 and 2 is",27.5 - 2)
+print("The product of 27.5 and 2 is",27.5 * 2)
+print("The quotient of 27.5 and 2 is",27.5 / 2)
+print("The floor division of 27.5 and 2 is",27.5 // 2)
+print("The exponent of 27.5 and 2 is",27.5 ** 2)
