@@ -26,3 +26,82 @@ def copies(copy):
         return 1100
     else:
         return 1000
+
+
+def is_even(integer):
+    if integer % 2 == 0:
+        return True
+
+    return False
+
+
+def is_prime(integer):
+    length_of_numbers = 0
+    count = 0
+
+    while count <= integer:
+        count += 1
+        if integer % count == 0:
+            length_of_numbers += 1
+
+    if length_of_numbers == 2:
+        return True
+
+    return False
+
+
+def subtract(first_number, second_number):
+    if first_number < second_number:
+        return second_number - first_number
+
+    return first_number - second_number
+
+
+def divide(first_number, second_number):
+    if second_number != 0:
+        result = first_number / second_number
+        approximate = round(result * 100.0) / 100.0
+        return approximate
+
+    return 0
+
+
+def factor_of(number):
+    count = 0
+    length = 0
+
+    while count <= number:
+        count += 1
+        if number % count == 0:
+            length += 1
+    return length
+
+
+def is_square(number):
+    count = 0
+    while count < number:
+        count += 1
+        if count * count == number:
+            return True
+
+    return False
+
+
+def palindrome(number):
+    result = number // 10000 % 10
+    result2 = number % 10
+
+    if result == result2:
+        return True
+
+    return False
+
+
+def factorial(number):
+    count = 1
+    result = 1
+
+    while count < number:
+        count += 1
+        result *= count
+    return result
