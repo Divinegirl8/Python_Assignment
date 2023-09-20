@@ -8,5 +8,6 @@ while Response:
 
     user = input("Do you want to continue: ")
 
+    # refactor the if condition below, it can be shorter
     if user == "no" or user == "No" or user == "NO":
         Response = False
