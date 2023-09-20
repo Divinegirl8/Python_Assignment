@@ -8,6 +8,11 @@ while Response:
 
     user = input("Do you want to continue: ")
 
+<<<<<<< HEAD
     # refactor the if condition below, it can be shorter
     if user == "no" or user == "No" or user == "NO":
+=======
+    isResponseNo = user.lower() == "no"
+    if isResponseNo:
+>>>>>>> be97ece (update)
         Response = False

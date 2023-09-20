@@ -18,9 +18,21 @@ total_deduction_a = "{:.2f}".format(total_deduction)
 net_pay = gross_pay - total_deduction
 net_pay_a = "{:.2f}".format(net_pay)
 
-print(employee_name, "Payroll statement for the month of April")
-print()
+print(f"""
+{employee_name} Payroll statement for the month of April
+Employee Name: {employee_name}
+Hours Worked: {hours_worked}
+Pay Rate:     ${hourly_pay}
+Gross Pay:    ${gross_pay}
 
+Deductions: 
+Federal Withholding: ${federal_income}
+State Withholding:   ${state_income_a}
+Total Deduction: $ {total_deduction_a}
+Net Pay: ${net_pay_a}
+""")
+
+<<<<<<< HEAD
 print("Employee Name:", employee_name)
 print("Hours Worked:", hours_worked)
 print("Pay Rate:", "$" + str(hourly_pay))
@@ -32,3 +44,5 @@ print("Total Deduction:", "$" + str(total_deduction_a))
 print("Net Pay:", "$" + str(net_pay_a))
 
 # refactor to use one print statement.
+=======
+>>>>>>> be97ece (update)
