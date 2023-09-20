@@ -3,7 +3,7 @@ number = int(input("enter a number:"))
 largest_number = number
 smallest_number = number
 
-count = 0;
+count = 0
 
 while number != 1:
 
