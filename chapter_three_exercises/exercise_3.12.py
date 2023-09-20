@@ -10,3 +10,5 @@ if number1 == number5:
     print(f'{number} is a palindrome')
 else:
     print(f'{number} is not a palindrome')
+
+# this code can be shorter, should we try ??
