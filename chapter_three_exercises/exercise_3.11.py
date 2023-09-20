@@ -12,6 +12,7 @@ while gallons != -1:
     gallons = float(input("Enter the gallons used (-1 to end): "))
 
     if gallons == -1: break
+# its a sentinel control loop, you dont need the if statement, the moment user enters -1, the loop will stop
 
     miles = int(input("Enter the miles driven: "))
     print(f'The miles/gallon for this tank was: {miles / gallons:.6f}')
