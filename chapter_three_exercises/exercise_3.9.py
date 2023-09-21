@@ -5,4 +5,4 @@ count = 5
 while count > 0:
     count -= 1
     digit = user_number // 10 ** count % 10
-    print(digit,end=" ")
+    print(digit, end=" ")

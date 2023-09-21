@@ -18,7 +18,6 @@
 #     print("Bonus to the instructor")
 
 
-
 passes = 0
 fail = 0
 count = 0
@@ -26,9 +25,9 @@ count = 0
 while count < 10:
     result = int(input("Enter result (pass = 1, fail = 2): "))
     if result == 1:
-        count+=1
+        count += 1
     if result == 2:
-        fail +=1
+        fail += 1
         count += 1
 
         if result != 1 or result != 2: continue
