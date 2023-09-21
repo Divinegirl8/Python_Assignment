@@ -8,7 +8,7 @@ area = π * circle_radius * circle_radius
 approximate_area = '{:.3f}'.format(area)
 
 
-print("The diameter of the circle is",diameter)
-print("The circumference of the circle is",approximate_circumference)
-print("The area of the circle is",approximate_area)
+print(f"The diameter of the circle is {diameter}\nThe circumference of the circle is {approximate_circumference}\nThe "
+      f"area of the circle is {approximate_area}")
+
 

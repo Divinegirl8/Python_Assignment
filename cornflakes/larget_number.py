@@ -17,5 +17,4 @@ while number != 1:
 
     number = int(input("enter a number:"))
 
-print("The largest number is", largest_number)
-print("The smallest number is", smallest_number)
+print(f"The largest number is {largest_number}\nThe smallest number is {smallest_number}")

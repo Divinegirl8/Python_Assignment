@@ -1,18 +1,21 @@
-print(ord('B'))
-print(ord('C'))
-print(ord('D'))
+print(f"""
+{ord('B')}
+{ord('C')}
+{ord('D')}
 
-print(ord('b'))
-print(ord('c'))
-print(ord('d'))
+{ord('b')}
+{ord('c')}
+{ord('d')}
 
-print(ord('0'))
-print(ord('1'))
-print(ord('2'))
+{ord('0')}
+{ord('1')}
+{ord('2')}
 
-print(ord('$'))
-print(ord('*'))
-print(ord('+'))
-print(ord('B'))
-print(ord('C'))
-print(ord(' '))
+{ord('$')}
+{ord('*')}
+{ord('+')}
+{ord('B')}
+{ord('C')}
+{ord(' ')}
+
+""")

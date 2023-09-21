@@ -32,17 +32,3 @@ Total Deduction: $ {total_deduction_a}
 Net Pay: ${net_pay_a}
 """)
 
-<<<<<<< HEAD
-print("Employee Name:", employee_name)
-print("Hours Worked:", hours_worked)
-print("Pay Rate:", "$" + str(hourly_pay))
-print("Gross Pay:", "$" + str(gross_pay))
-print("Deductions: ")
-print("Federal Withholding:", "$" + str(federal_income))
-print("State Withholding:", "$" + str(state_income_a))
-print("Total Deduction:", "$" + str(total_deduction_a))
-print("Net Pay:", "$" + str(net_pay_a))
-
-# refactor to use one print statement.
-=======
->>>>>>> be97ece (update)

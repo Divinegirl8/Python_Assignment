@@ -1,17 +1,16 @@
-user = int(input("Enter a number: "))
-
+user = 0
 count = 0
-sum = 0
+sum_number = 0
 total = 0
 
-while user != 2:
+while user != -2:
+    user = int(input("Enter a number: "))
 
     if user > 0:
         count += 1
         total += 1
-        sum += user
+        sum_number += user
 
-    user = int(input("Enter a number: "))
-
-    if total == 10: break
-print(sum)
+    if total == 10:
+        break
+print(sum_number)

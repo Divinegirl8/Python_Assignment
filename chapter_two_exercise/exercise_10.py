@@ -21,8 +21,10 @@ if number_two < smallest:
 if number_three < smallest:
     smallest = number_three
 
-print("The sum of the numbers is", sum_of_numbers)
-print("The average of the numbers is", average_of_numbers)
-print("The product of the numbers is", product_of_numbers)
-print("The largest number is", largest)
-print("The smallest number is", smallest)
+print(f"""
+The sum of the numbers is {sum_of_numbers}
+The average of the numbers is {average_of_numbers}
+The product of the numbers is {product_of_numbers}
+The largest number is {largest}
+The smallest number is  {smallest}
+""")

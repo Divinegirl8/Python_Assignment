@@ -9,17 +9,10 @@ credit_score = credit_score == "true" or credit_score == "True"
 if credit_score:
     discount = 10 * price / 100
     down_payment = 10 * price / 100
-    print("************************\n\tInvoice\n*************************")
+    print(f"************************\n\tInvoice\n*************************\nName of items: {name}\nDiscount : {discount}%\nDeposit : ${down_payment}\n************************")
 
-    print(f" Name of items: {name}\n Discount : {discount}%\n Deposit : ${down_payment}")
-
-    print('************************')
 
 else :
     down_payment2 = 25 * price / 100
 
-    print("************************\n\tInvoice\n*************************")
-
-    print(f" Name of items: {name}\n Discount : no discount\n Deposit : ${down_payment2}")
-
-    print('************************')
+    print(f"************************\n\tInvoice\n*************************\nName of items: {name}\nDiscount : no discount\nDeposit : ${down_payment2}\n************************")
