@@ -1,6 +1,7 @@
 # π
 first_series = 4 - 4 / 3
 second_series = first_series + 4 / 5
+print(second_series)
 third_series = second_series - 4 / 7
 forth_series = third_series + 4 / 9
 fifth_series = forth_series - 4 / 11
