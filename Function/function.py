@@ -122,6 +122,32 @@ def sort_number(numbers):
     return numbers
 
 
+def median(numbers):
+    sort_int = sort_number(numbers)
+    length = len(sort_int)
+
+    list_number = sort_int
+    if length % 2 == 0:
+        middle_number = list_number[len(list_number) // 2]
+        middle_number_two = list_number[len(list_number) // 2 - 1]
+        median_number = (middle_number + middle_number_two) / 2
+    else:
+        median_number = list_number[len(list_number) // 2]
+
+    return median_number
+
+
+def mean(numbers):
+    sort_int = sort_number(numbers)
+    sum_number = 0
+    length_number = len(sort_int)
+
+    for number in sort_int:
+        sum_number += number
+        total = sum_number / length_number
+    return f"{total:.1f}"
+
+
 def fibonacci(count):
     first_number = 0
     second_number = 1
@@ -132,18 +158,9 @@ def fibonacci(count):
         first_number, second_number = second_number, result
         result = first_number + second_number
         if result < count:
-            print(result)
+            return result
 
 
-    # first_number = 0
-    # second_number = 1
-    # result = first_number + second_number
-    #
-    # count = 50
-    #
-    # while count > 0:
-    #     count -= 1
-    #     first_number, second_number = second_number, result
-    #      = first_number + second_number
-    #     if result < count:
-    #         print(result)
+if __name__ == "__main__":
+    num = [9, 11, 22, 34, 17, 22, 34, 22, 40]
+    print(mean(num))
