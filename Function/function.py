@@ -105,3 +105,45 @@ def factorial(number):
         count += 1
         result *= count
     return result
+
+
+def is_palindrome(number):
+    return str(number) == str(number)[::-1]
+
+
+def sort_number(numbers):
+    length_of_list = len(numbers)
+
+    for row in range(length_of_list):
+        for column in range(row, length_of_list - 1):
+            if numbers[row] > numbers[column + 1]:
+                numbers[row], numbers[column + 1] = numbers[column + 1], numbers[row]
+
+    return numbers
+
+
+def fibonacci(count):
+    first_number = 0
+    second_number = 1
+    result = first_number + second_number
+
+    while count > 0:
+        count -= 1
+        first_number, second_number = second_number, result
+        result = first_number + second_number
+        if result < count:
+            print(result)
+
+
+    # first_number = 0
+    # second_number = 1
+    # result = first_number + second_number
+    #
+    # count = 50
+    #
+    # while count > 0:
+    #     count -= 1
+    #     first_number, second_number = second_number, result
+    #      = first_number + second_number
+    #     if result < count:
+    #         print(result)

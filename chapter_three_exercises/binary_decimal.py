@@ -1,5 +1,6 @@
 number = input("Enter a number in 0's and 1's: ")
 length = len(number)
+print(length)
 
 count = 0
 exponential = 0
