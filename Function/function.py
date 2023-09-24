@@ -161,6 +161,76 @@ def fibonacci(count):
             return result
 
 
-if __name__ == "__main__":
-    num = [9, 11, 22, 34, 17, 22, 34, 22, 40]
-    print(mean(num))
+def interestRate(rate, year, principal):
+    interest_rate = rate / 100
+
+    for count in range(year):
+        result = principal * (1 + interest_rate) ** year
+    return f"{result:.1f}"
+
+
+def fizzbuzz(number):
+    for count in range(1, number):
+        if count % 3 == 0 and count % 5 == 0:
+            print("fizzbuzz")
+        elif count % 3 == 0:
+            print("fizz")
+        elif count % 5 == 0:
+            print("buzz")
+        else:
+            print(count)
+
+
+def even_odd_numbers(number):
+    count_even = 0
+    count_odd = 0
+
+    for count in number:
+        if count % 2 == 0:
+            count_even += 1
+
+        else:
+            count_odd += 1
+
+    print(f"Even is {count_even}\nOdd is {count_odd}")
+
+
+def grade_checker():
+    grade = 0
+    count_a = 0
+    count_b = 0
+    count_c = 0
+    count_d = 0
+    count_f = 0
+    total = 0
+    grade_counter = 0
+
+    while grade != -1:
+
+        grade = int(input("enter grade of student(enter -1 to end): "))
+        total += grade
+        grade_counter += 1
+
+        match grade / 10:
+            case 9, 10:
+                count_a += 1
+            case 8:
+                count_b += 1
+            case 7:
+                count_c += 1
+            case 6:
+                count_d += 1
+            case _:
+                count_f += 1
+    if grade != 0:
+        print(f"The average grade of student score is {grade / total}")
+    else:
+        print("no grades entered")
+
+# if __name__ == "__main__":
+#     trial = [2, 3, 7, 4]
+#     even_odd_numbers(trial)
+
+# if __name__ == "__main__":
+#     num = [9, 11, 22, 34, 17, 22, 34, 22, 40]
+#     print(mean(num))
