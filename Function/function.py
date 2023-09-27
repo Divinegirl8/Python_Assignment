@@ -267,11 +267,12 @@ def triangle():
         for column1 in range(row, 8 - 1):
             print(" ", end=" ")
         for count in range(row):
-             print("*", end=" ")
+            print("*", end=" ")
 
-        for count in range(1,row):
+        for count in range(1, row):
             print("*", end=" ")
         print()
+
 
 def reversed_triangle():
     for row in range(1, 8):
@@ -281,15 +282,35 @@ def reversed_triangle():
         for column2 in range(row, 8 - 1):
             print("*", end=" ")
 
-
         for column1 in range(row, 7 - 1):
             print("*", end=" ")
 
         print()
 
+
+def monetary_interest_calculator(principal_amount, rate_amount, compound, year):
+    string_value = ""
+    principal = principal_amount
+    pennies = principal * 100
+    rate = rate_amount / 100
+    compounding_frequently = compound
+
+    for years in range(1, year):
+        result = pennies * (1 + rate / compounding_frequently) ** (compounding_frequently * years)
+        dollar = result // 100
+        cents = result % 100
+
+    return f"The compounded interest is ${dollar:.0f}.{cents:.0f} cents"
+
+
+
+
+# if __name__ == "__main__":
+#     triangle()
+#     reversed_triangle()
+
 if __name__ == "__main__":
-    triangle()
-    reversed_triangle()
+    print(monetary_interest_calculator(1000, 5, 4, 11))
 
 # if __name__ == "__main__":
 #     num = [9, 11, 22, 34, 17, 22, 34, 22, 40]
