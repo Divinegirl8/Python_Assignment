@@ -152,13 +152,20 @@ def fibonacci(count):
     first_number = 0
     second_number = 1
     result = first_number + second_number
+    list = ""
 
+    output = f"{first_number} {second_number} {second_number} "
+    list += output
     while count > 0:
         count -= 1
         first_number, second_number = second_number, result
         result = first_number + second_number
         if result < count:
-            return result
+            list_result = f"{result}"
+            list += list_result
+        list += " "
+
+    return list
 
 
 def interestRate(rate, year, principal):
@@ -170,18 +177,24 @@ def interestRate(rate, year, principal):
 
 
 def fizzbuzz(number):
+    result = ""
     for count in range(1, number):
+        result += "\n"
         if count % 3 == 0 and count % 5 == 0:
-            print("fizzbuzz")
+            result += "fizzbuzz"
         elif count % 3 == 0:
-            print("fizz")
+            result += "fizz"
         elif count % 5 == 0:
-            print("buzz")
+            result += "buzz"
         else:
-            print(count)
+            output = f"{count}"
+            result += output
+
+    return result
 
 
-def even_odd_numbers(number):
+def even_odd_numbers(*number):
+    result = ""
     count_even = 0
     count_odd = 0
 
@@ -192,27 +205,34 @@ def even_odd_numbers(number):
         else:
             count_odd += 1
 
-    print(f"Even is {count_even}\nOdd is {count_odd}")
+    output = f"The counted even number is {count_even}\n"
+    result += output
+
+    output2 = f"The counted odd number is {count_odd}"
+    result += output2
+
+    return result
 
 
 def grade_checker():
-    grade = 0
+    grade = int(input("Enter score(enter -1 to exit): "))
     count_a = 0
     count_b = 0
     count_c = 0
     count_d = 0
     count_f = 0
-    total = 0
     grade_counter = 0
+    total = 0
 
     while grade != -1:
-
-        grade = int(input("enter grade of student(enter -1 to end): "))
         total += grade
         grade_counter += 1
+        grade = int(input("Enter score(enter -1 to exit): "))
 
         match grade / 10:
-            case 9, 10:
+            case 10:
+                count_a += 1
+            case 9:
                 count_a += 1
             case 8:
                 count_b += 1
@@ -222,15 +242,73 @@ def grade_checker():
                 count_d += 1
             case _:
                 count_f += 1
-    if grade != 0:
-        print(f"The average grade of student score is {grade / total}")
-    else:
-        print("no grades entered")
 
-# if __name__ == "__main__":
-#     trial = [2, 3, 7, 4]
-#     even_odd_numbers(trial)
+    print(total)
+    print(grade_counter)
+    print(count_d)
+
+
+def shape(item):
+    aesterik = ""
+    for number in item:
+        for row in number:
+            if row == 0:
+                aesterik += " "
+            if row == 1:
+                aesterik += "*"
+        aesterik += "\n"
+
+    return aesterik
+
+
+def triangle():
+    star = ""
+    for row in range(1, 8):
+        for column1 in range(row, 8 - 1):
+            print(" ", end=" ")
+        for count in range(row):
+             print("*", end=" ")
+
+        for count in range(1,row):
+            print("*", end=" ")
+        print()
+
+def reversed_triangle():
+    for row in range(1, 8):
+        for column in range(row):
+            print(" ", end=" ")
+
+        for column2 in range(row, 8 - 1):
+            print("*", end=" ")
+
+
+        for column1 in range(row, 7 - 1):
+            print("*", end=" ")
+
+        print()
+
+if __name__ == "__main__":
+    triangle()
+    reversed_triangle()
 
 # if __name__ == "__main__":
 #     num = [9, 11, 22, 34, 17, 22, 34, 22, 40]
 #     print(mean(num))
+
+
+# if __name__ == "__main__":
+#     print(fizzbuzz(51))
+
+#
+# if __name__ == "__main__":
+#     picture = [
+#         [0, 0, 0, 1, 0, 0, 0],
+#         [0, 0, 1, 1, 1, 0, 0],
+#         [0, 1, 1, 1, 1, 1, 0],
+#         [1, 1, 1, 1, 1, 1, 1],
+#         [0, 0, 0, 1, 0, 0, 0],
+#         [0, 0, 0, 1, 0, 0, 0],
+#         [0, 0, 0, 1, 0, 0, 0],
+#         [0, 0, 0, 1, 0, 0, 0]
+#     ]
+# print(shape(picture))
