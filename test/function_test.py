@@ -1,4 +1,5 @@
 import unittest
+from Function import function
 
 
 # def percentage_rate(rate):
@@ -14,16 +15,16 @@ import unittest
 
 class MyTestCase(unittest.TestCase):
     def test_range_below_fifty(self):
-        self.assertEqual(percentage_rate(40), 11400)
+        self.assertEqual(function.commission(40), 11400)
 
     def test_range_below_fifty_nine(self):
-        self.assertEqual(percentage_rate(55), 16000)
+        self.assertEqual(function.commission(55), 16000)
 
     def test_range_below_sixty_nine(self):
-        self.assertEqual(percentage_rate(63), 20750)
+        self.assertEqual(function.commission(63), 20750)
 
     def test_range_above_seventy(self):
-        self.assertEqual(percentage_rate(97), 53500)
+        self.assertEqual(function.commission(97), 53500)
 
 
 if __name__ == '__main__':

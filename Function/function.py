@@ -303,14 +303,47 @@ def monetary_interest_calculator(principal_amount, rate_amount, compound, year):
     return f"The compounded interest is ${dollar:.0f}.{cents:.0f} cents"
 
 
+def max_number(numbers):
+    maximum = 0
+
+    for num in numbers:
+        if num > maximum:
+            maximum = num
+    return maximum
 
 
-# if __name__ == "__main__":
-#     triangle()
-#     reversed_triangle()
+def min_number(numbers):
+    minimum = numbers[0]
+
+    for num in numbers:
+        if num < minimum:
+            minimum = num
+    return minimum
+
+
+def sum_number(numbers):
+    total = 0
+
+    for num in numbers:
+        total += num
+    return total
+
+
+def average(numbers):
+    return sum_number(numbers) / len(numbers)
+
 
 if __name__ == "__main__":
-    print(monetary_interest_calculator(1000, 5, 4, 11))
+    list_score = []
+
+    for integers in range(1, 11):
+        score = int(input("Enter scores: "))
+        list_score.append(score)
+
+print(sum_number(list_score))
+print(average(list_score))
+print(max_number(list_score))
+print(min_number(list_score))
 
 # if __name__ == "__main__":
 #     num = [9, 11, 22, 34, 17, 22, 34, 22, 40]
