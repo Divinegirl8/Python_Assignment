@@ -65,6 +65,19 @@ def running_total(user_input):
     return string_convert
 
 
-if __name__ == "__main__":
-    user = [1, 2, 3, 4]
-    print(running_total(user))
+def two_list(letter: str, integer: int):
+    result = "["
+    column = 0
+    for row in range(len(letter)):
+        for column in range(len(integer)):
+            result1 = f"{letter[row]},"
+            result2 = f"{integer[row]}"
+
+        result += result1 + result2
+        if column != row:
+            result += ","
+    result += "]"
+
+    return result
+
+
