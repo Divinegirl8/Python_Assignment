@@ -66,18 +66,30 @@ def running_total(user_input):
 
 
 def two_list(letter: str, integer: int):
-    result = "["
-    column = 0
+    result = ""
     for row in range(len(letter)):
-        for column in range(len(integer)):
-            result1 = f"{letter[row]},"
-            result2 = f"{integer[row]}"
-
-        result += result1 + result2
-        if column != row:
+        result += f"{letter[row]}," + f"{integer[row]}"
+        if row < len(letter) - 1:
             result += ","
-    result += "]"
 
-    return result
+    return "[" + result + "]"
 
 
+def seperated_list(letter, integer):
+    result1 = ""
+    result2 = ""
+    for row in range(len(letter)):
+        result1 += letter[row] + ","
+    for column in range(len(integer)):
+        result2 += f"{integer[column]}"
+        if column < len(integer) - 1:
+            result2 += ","
+
+    return "[" + result1 + result2 + "]"
+
+
+
+if __name__ == "__main__":
+    name = ["a", "b", "c", "d", "e"]
+    userNumber = [1, 2, 3, 5, 6]
+    print(seperated_list(name, userNumber))
