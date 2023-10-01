@@ -34,3 +34,37 @@ def string_palindrome(user_input):
     return user_input == user_input[::-1]
 
 
+def summation_for_loop(user_input):
+    total = 0
+    for row in user_input:
+        total += row
+
+    return f"{total:.1f}"
+
+
+def summation_while_loop(user_input):
+    total = 0
+    row = 0
+    while row < len(user_input):
+        total += user_input[row]
+        row += 1
+
+    return f"{total:.1f}"
+
+
+def running_total(user_input):
+    total = 0
+    count = 0
+    string_convert = " "
+
+    while count < len(user_input):
+        total += user_input[count]
+        count += 1
+        string_format = f"{total}"
+        string_convert += string_format + " "
+    return string_convert
+
+
+if __name__ == "__main__":
+    user = [1, 2, 3, 4]
+    print(running_total(user))
