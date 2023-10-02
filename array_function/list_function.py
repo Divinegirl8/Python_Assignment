@@ -24,6 +24,8 @@ def check_element(numbers: int, integer: int) -> bool:
             return True
     return False
 
+# return the expression, it will evalaute to true or false
+
 
 def string_palindrome(user_input):
     return user_input == user_input[::-1]
@@ -69,7 +71,7 @@ def two_list(letter: str, integer: int):
 
     return "[" + result + "]"
 
-
+# we will talk on this.
 def seperated_list(letter, integer):
     result1 = ""
     result2 = ""
@@ -81,7 +83,6 @@ def seperated_list(letter, integer):
             result2 += ","
 
     return "[" + result1 + result2 + "]"
-
 
 def list_digits(number):
     cast_number = str(number)
