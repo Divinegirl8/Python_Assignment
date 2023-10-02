@@ -36,6 +36,27 @@ press 13 -->  SIM services
         case 6:
             settings()
 
+        case 7:
+            call_divert()
+
+        case 8:
+            games()
+
+        case 9:
+            calculator()
+
+        case 10:
+            reminders()
+
+        case 11:
+            clock()
+
+        case 12:
+            profiles()
+
+        case 13:
+            sim_services()
+
         case _:
             menu()
 
@@ -346,12 +367,158 @@ press 5 --> Exit
 
 
 def call_setting():
-    pass
+    call_user = int(input("""
+    Call Setting
+press 1 --> Automatic redial
+press 2 --> Speed dialling
+press 3 --> Call waiting options
+press 4 --> Own number sending
+press 5 --> Phone line in use
+press 6 --> Automatic answer
+press 7 --> Go back to previous menu
+press 8 --> Exit       
+    
+    """))
+    match call_user:
+        case 1:
+            print("Automatic redial")
+        case 2:
+            print("Speed dialling")
+        case 3:
+            print("Call waiting options")
+        case 4:
+            print("Own number sending")
+        case 5:
+            print("Phone line in use")
+        case 6:
+            print("Automatic answer")
+        case 7:
+            settings()
+        case 8:
+            menu()
+        case _:
+            call_setting()
 
 
 def phone_setting():
-    pass
+    phone_user = int(input("""
+ Phone Setting
+press 1 --> Language
+press 2 --> Cell info display
+press 3 --> Welcome note
+press 4 --> Network selection
+press 5 --> Lights
+press 6 --> Confirm SIM service actions
+press 7 --> Go back to previous menu
+press 8 --> Exit   
+     
+    """))
+    match phone_user:
+        case 1:
+            print("Language")
+        case 2:
+            print("Cell info display")
+        case 3:
+            print("Welcome note")
+        case 4:
+            print("Network selection")
+        case 5:
+            print("Lights")
+        case 6:
+            print("Confirm SIM service actions")
+        case 7:
+            settings()
+        case 8:
+            menu()
+        case _:
+            phone_setting()
 
 
 def security_setting():
-    pass
+    security_user = int(input("""
+  Security Setting  
+press 1 --> PIN code request
+press 2 --> Call barring service
+press 3 --> Fixed dialling
+press 4 --> Closed user group
+press 5 --> Phone security
+press 6 --> Change access codes
+press 7 --> Go back to previous menu
+press 8 --> Exit   
+    
+    """))
+
+    match security_user:
+        case 1:
+            print("PIN code request")
+        case 2:
+            print("Call barring service")
+        case 3:
+            print("Fixed dialling")
+        case 4:
+            print("Closed user group")
+        case 5:
+            print("Phone security")
+        case 6:
+            print("Change access codes")
+        case 7:
+            settings()
+        case 8:
+            menu()
+        case _:
+            security_setting()
+
+
+def call_divert():
+    print("call divert")
+
+
+def games():
+    print("games")
+
+
+def calculator():
+    print("calculator")
+
+
+def reminders():
+    print("reminders")
+
+
+def clock():
+    clock_user = int(input("""
+       Clock
+press 1 --> Alarm clock
+press 2 --> Clock settings
+press 3 --> Date setting
+press 4 --> Stopwatch
+press 5 --> Countdown timer
+press 6 --> Auto update of date and time
+press 7 --> Exit    
+    
+    """))
+    match clock_user:
+        case 1:
+            print("Alarm clock")
+        case 2:
+            print("Clock settings")
+        case 3:
+            print("Date setting")
+        case 4:
+            print("Stopwatch")
+        case 5:
+            print("Countdown timer")
+        case 6:
+            print("Auto update of date and time")
+        case 7:
+            menu()
+        case _:
+            clock()
+
+
+def profiles():
+    print("profiles")
+
+
+def sim_services():
+    print("SIM services")
