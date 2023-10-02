@@ -1,3 +1,6 @@
+# now lets enhance this code so it doesnt break
+# if run this and enter a character instead of number what happens??
+
 def menu():
     user_phone = int(input("""
         MENU
