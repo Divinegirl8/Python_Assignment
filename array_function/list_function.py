@@ -18,11 +18,6 @@ def even_number(number):
     return number[::2]
 
 
-def list_digits(numbers):
-    listed_number = [numbers]
-    return listed_number
-
-
 def check_element(numbers: int, integer: int) -> bool:
     for items in numbers:
         if items == integer:
@@ -88,8 +83,14 @@ def seperated_list(letter, integer):
     return "[" + result1 + result2 + "]"
 
 
+def list_digits(number):
+    cast_number = str(number)
+    list_basket = []
 
-if __name__ == "__main__":
-    name = ["a", "b", "c", "d", "e"]
-    userNumber = [1, 2, 3, 5, 6]
-    print(seperated_list(name, userNumber))
+    for integer in cast_number:
+        list_basket.append(int(integer))
+    return list_basket
+
+
+
+

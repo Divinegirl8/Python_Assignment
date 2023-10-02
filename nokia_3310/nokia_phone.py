@@ -1,0 +1,2 @@
+from nokia_3310 import nokia_phone_builder
+nokia_phone_builder.menu()
