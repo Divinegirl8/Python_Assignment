@@ -1,5 +1,3 @@
-
-
 def menu():
     user_phone = input("""
         MENU
@@ -480,8 +478,87 @@ def games():
 
 
 def calculator():
-    print("calculator")
+    calculator_user = input("""
+press 1 --> Addition
+press 2 --> Subtraction
+press 3 --> Square
+press 4 --> Square root
+press 5 --> Multiplication
+    
+    """)
 
+    match calculator_user:
+        case "1":
+            print(add_numbers())
+        case "2":
+            print(subtract_numbers())
+        case "3":
+            user = float(input("Enter a number: "))
+            print(square_numbers(user))
+        case "4":
+            user = float(input("Enter a number: "))
+            print(square_root(user))
+
+        case "5":
+            print(multiply_numbers())
+
+        case _:
+            calculator()
+
+
+def add_numbers():
+    number = float(input("Enter number and press -0 to quit: "))
+    total = 0
+    count = 0
+
+    while number != -0:
+        count += 1
+        total += number
+
+        number = float(input("Enter number and press -0 to quit: "))
+
+    return f"The sum of the number is {total}"
+
+
+def subtract_numbers():
+    number = float(input("Enter number: "))
+    number2 = float(input("Enter number: "))
+    result = number - number2
+    total = 0
+    count = 0
+
+    while number != -0:
+        number = float(input("Enter number and press -0 to quit: "))
+        count += 1
+        result -= number
+
+    return f"The sum of the number is {result}"
+
+
+
+
+
+
+def square_numbers(number):
+    return f"The square of {number:.0f} is {number ** 2}"
+
+
+def square_root(number):
+    return f"The square root of {number:.0f} is {number ** (1 / 2):.2f}"
+
+
+def multiply_numbers():
+    number = float(input("Enter number and press -0 to quit: "))
+    total = 1
+    count = 0
+
+    while number != -0:
+        count += 1
+        total *= number
+
+        number = float(input("Enter number and press -0 to quit: "))
+
+    return f"The sum of the number is {total}"
 
 def reminders():
     print("reminders")

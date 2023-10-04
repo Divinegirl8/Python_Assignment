@@ -17,12 +17,11 @@ class Account:
             self._balance += amount
 
     def withdraw(self, money):
-        if self._balance >= money and self._balance > 0:
+        if money <= self._balance > 0:
             self._balance -= money
-        elif money < 0:
-            return self._balance
 
-        print("you have exceeded the balance")
-        return self._balance
+        else:
+           return self._balance
+
 
 # nice try, well done
