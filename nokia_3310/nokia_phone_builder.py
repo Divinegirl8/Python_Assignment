@@ -66,7 +66,7 @@ def phone_book():
     Phone Book
 press 1 --> Search
 press 2 --> Service Nos
-press 3 --> Add Name
+press 3 --> Add Name and Contact
 press 4 --> Erase
 press 5 --> Edit
 press 6 --> Assign tone
@@ -74,15 +74,17 @@ press 7 --> Send B' Card
 press 8 --> Options
 press 9 --> Speed Dials
 press 10 --> Voice Tags
-press 11 --> Exit     
+press 11 --> Contact List
+press 12 --> Exit     
     """)
     match phone:
         case "1":
-            print("search")
+            print("Search")
         case "2":
             print("Service Nos")
         case "3":
-            print("Add Name")
+            print(contact())
+            phone_book()
         case "4":
             print("Erase")
         case "5":
@@ -98,9 +100,26 @@ press 11 --> Exit
         case "10":
             print("Voice Tags")
         case "11":
+            print(new_list)
+
+        case "12":
             menu()
         case _:
             phone_book()
+
+
+new_list = []
+
+
+def contact():
+    user_contact = input("Enter Number")
+    user_name = input("Enter Name: ")
+    new_list.append(user_name)
+    new_list.append(user_contact)
+
+    return new_list
+
+
 
 
 def options():
