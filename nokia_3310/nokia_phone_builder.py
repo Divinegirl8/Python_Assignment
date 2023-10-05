@@ -484,6 +484,7 @@ press 2 --> Subtraction
 press 3 --> Square
 press 4 --> Square root
 press 5 --> Multiplication
+press 6 --> Division
     
     """)
 
@@ -501,6 +502,9 @@ press 5 --> Multiplication
 
         case "5":
             print(multiply_numbers())
+
+        case "6":
+            print(division())
 
         case _:
             calculator()
@@ -535,10 +539,6 @@ def subtract_numbers():
     return f"The sum of the number is {result}"
 
 
-
-
-
-
 def square_numbers(number):
     return f"The square of {number:.0f} is {number ** 2}"
 
@@ -560,8 +560,24 @@ def multiply_numbers():
 
     return f"The sum of the number is {total}"
 
+
 def reminders():
     print("reminders")
+
+
+def division():
+    number = float(input("Enter a number: "))
+    number2 = float(input("Enter a number: "))
+
+    result = number / number2
+    count = 0
+
+    while result != 0:
+        number3 = float(input("Enter a number: "))
+        if number3 == 0: break
+        result /= number3
+        count += 1
+    return f"The result is {result}"
 
 
 def clock():
