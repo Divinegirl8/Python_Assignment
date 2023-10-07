@@ -120,8 +120,6 @@ def contact():
     return new_list
 
 
-
-
 def options():
     option_user = input("""
         Options
