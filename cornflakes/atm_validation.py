@@ -70,6 +70,11 @@ elif get_index == 3 and get_index_two == 7 and 13 <= len(user) <= 16 and total %
     card_type = "America Express Card"
     validity_status = "Invalid"
 
+if get_index < 3 or get_index > 6:
+    card_type = "Invalid Card";
+    validity_status = "Invalid"
+
+
 
 
 print(f"""
