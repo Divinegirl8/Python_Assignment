@@ -14,9 +14,9 @@ def double_item(numbers):
 
 def change_index(numbers):
     for index, value in enumerate(numbers):
-        if 4 >= index <= 7:
-            value[index] = 0
-        return value
+        if 4 <= index <= 7:
+            numbers[index] = 0
+    return numbers
 
 
 print(change_index(double_item(odd_numbers(add_to_list(1, 21)))))
