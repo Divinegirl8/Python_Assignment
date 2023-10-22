@@ -1,10 +1,10 @@
 number = input("Enter a number in 0's and 1's: ")
 length = len(number)
-print(length)
+
 
 count = 0
 exponential = 0
-sum = 0
+total = 0
 
 while count < length:
     result = (int(number) // 10 ** count) % 10
@@ -12,5 +12,5 @@ while count < length:
     output = result * 2 ** exponential
     exponential += 1
 
-    sum += output
-print(sum)
+    total += output
+print(total)
