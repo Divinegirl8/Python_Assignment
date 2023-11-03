@@ -104,6 +104,32 @@ class Test(TestCase):
      Number of Slices left: {left_over}
      Total cost to spend: {price}
     """
-        self.assertEqual(expected,pizza_function.display_large(large,value_box_index,left_over,price))
+        self.assertEqual(expected, pizza_function.display_large(large, value_box_index, left_over, price))
 
+    def test_medium_display(self):
+        total_customer_size = pizza_function.total_customer_size(4, 2, 1)
+        value_box_index = pizza_function.medium_size_index(total_customer_size, 6)
+        medium = pizza_function.calculate_medium_total_size(value_box_index)
+        left_over = pizza_function.calculate_medium_remaining_size(total_customer_size, medium)
+        price = pizza_function.calculate_medium_size_price(value_box_index)
+        expected = f"""
+     Number of Slices: {medium}
+     Number of Boxes: {value_box_index}
+     Number of Slices left: {left_over}
+     Total cost to spend: {price}
+    """
+        self.assertEqual(expected, pizza_function.display_medium(medium, value_box_index, left_over, price))
 
+    def test_small_display(self):
+        total_customer_size = pizza_function.total_customer_size(4, 2, 1)
+        value_box_index = pizza_function.small_size_index(total_customer_size, 4)
+        small = pizza_function.calculate_small_total_size(value_box_index)
+        left_over = pizza_function.calculate_small_remaining_size(small, total_customer_size)
+        price = pizza_function.calculate_small_size_price(value_box_index)
+        expected = f"""
+     Number of Slices: {total_customer_size}
+     Number of Boxes: {value_box_index}
+     Number of Slices left: {left_over}
+     Total cost to spend: {price}
+    """
+        self.assertEqual(expected, pizza_function.display_small(total_customer_size, value_box_index, left_over, price))
