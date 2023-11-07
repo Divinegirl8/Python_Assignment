@@ -171,3 +171,10 @@ def display_small(total_slices_number: int, box_number: int, left_slices: int, c
      Number of Slices left: {left_slices}
      Total cost to spend: {cost}
     """
+
+
+def display_Information(box_size: str, total_slice: int, box_number: int, left_over: int, cost: int):
+    display = ""
+    change_case = box_size.lower()
+    if change_case == "large":
+        display = display_large(total_slice, box_number, left_over, cost)

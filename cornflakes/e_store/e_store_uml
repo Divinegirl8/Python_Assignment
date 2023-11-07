@@ -1,0 +1,61 @@
+ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+ |+           Users            | - - - - - - - - - - - - - - - - - - - - - -
+ |_ _ _ _ _ _ _ _ _ _ _ _ _ _ _|                                           |
+ |                             |                                           |
+ | - age: int                  |                                           |
+ | - email_address: str        |                                           |
+ | - home_address : Addresses  |                                           |
+ | - name: str                 |                                           |
+ | - password : str            |                                           |
+ | - phone : str               |                                           |
+ |_ _ _ _ _ _ _ _ _ _ _ _ _ _ _|                                           |
+                                                                           |
+                                                                           |
+                                                                           |
+                                                                _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+                                                                |+               Customers                 |
+                                                                |_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ |
+                                                                |                                          |
+                                          - - - - - - - - - - - | - billing_information: BillingInformation|
+                                          |                     | - shopping_cart:  ShoppingCart[]         | - - - - - -
+                                          |                     |_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ |            |
+                                          |                                                                    _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+                                          |                                                                    |      ShoppingCart         |
+                                          |                                                                    |_ _ _ _ _ _ _ _ _ _ _ _ _ _|
+                                          |                                                                    | - item: Items[]           |
+                                          |                                                                    |_ _ _ _ _ _ _ _ _ _ _ _ _ _|
+                                          |                                                                             |
+                         _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _                                                          |
+                         |+       BillingInformation          |                                            _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+                         |_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ |                                            |+           Items            |
+                         |- receiver_phone_number : int       |                                            |_ _ _ _ _ _ _ _ _ _ _ _ _ _ _|
+                         |- receiver_name: str                |                                            |                             |
+                         |- delivery_address: Addresses[]     |- - - - - - - - -                           | - quantity_of_product: str  |
+          - - - - - - - -|- credit_card: CreditCardInformation|                 |                          | - product : Product         |- - - - - - - -
+          |              |_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ |                 |                          |_ _ _ _ _ _ _ _ _ _ _ _ _ _ _|              |
+          |                                                                     |                                                                       |
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _                                  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _                                                    |
+|+   CreditCardInformation      |                                  |+         Addresses            |                                     _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+|_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _|                                  |_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _|                                     | +          Product                 |
+| - card_cvv : str              |                                  | - city_name : str             |                                     |_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ |
+| - card_expiration_year: str   |                                  | - country_name: str           |                                     | - product_id : str                 |
+| - card_expiration_month: str  |                                  | - house_number: str           |                                     | - product_name: str                |
+| - credit_card_number: str     |                                  | - street : str                |                                     | - price : int                      |
+| - name_on_card : str          |                                  | - state : str                 |                                     | - product_description: str         |
+| - card_type : CardType        |- - - - -                         |_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _|                                     | - product_category: ProductCategory| - - - - - -
+|_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _|        |                                                                                               |_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ |           |
+                                         |                                                                                                                                                |
+                                         |                                                                                                                                                |
+                             _ _ _ _ _ _ _ _ _ _ _ _ _ _ _                                                                                                                    _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+                             |+        CardType          |                                                                                                                    |+           ProductCategory          |
+                             |_ _ _ _ _ _ _ _ _ _ _ _ _ _|                                                                                                                    |_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _|
+                             |       MASTERCARD          |                                                                                                                    |                                     |
+                             |        VISACARD           |                                                                                                                    |            ELECTRONICS              |
+                             |          VERVE            |                                                                                                                    |             GROCERIES               |
+                             |      AMERICAEXPRESS       |                                                                                                                    |              UTENSILS               |
+                             |_ _ _ _ _ _ _ _ _ _ _ _ _ _|                                                                                                                    |              CLOTHING               |
+                                                                                                                                                                              |_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _|
+
+
+
+
