@@ -1,3 +1,5 @@
+import random
+
 geo_political_zones = {
     "north_central": ["Benue", "FCT", "Kogi", "Kwara", "Nasarawa", "Niger", "Plateau"],
     "north_east": ["Adamawa", "Bauchi", "Borno", "Gombe", "Taraba", "Yobe"],
@@ -16,3 +18,4 @@ def get_geo_political_zones(value):
 
 
 print(get_geo_political_zones("oyo"))
+
