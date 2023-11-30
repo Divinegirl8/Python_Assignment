@@ -1,5 +1,6 @@
 from decimal import Decimal, getcontext
 from bank_package.account import Account
+from exceptions.account_number_not_found_error import AccountNumberNotFoundError
 
 
 class Bank:
@@ -16,6 +17,7 @@ class Bank:
         self.accounts.append(account)
 
         self.count_number_of_customers += 1
+        return account
 
     def create_name(self, first_name, last_name):
         return first_name + " " + last_name
@@ -30,7 +32,7 @@ class Bank:
         for value in self.accounts:
             if value.get_account_number() == account_number:
                 return value
-        raise TypeError(f"{account_number} not found")
+        raise AccountNumberNotFoundError(f"{account_number} not found")
 
     def deposit(self, account_number, amount):
         account_number = self.find_account_number(account_number)

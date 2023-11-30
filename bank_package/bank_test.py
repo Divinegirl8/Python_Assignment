@@ -1,5 +1,6 @@
 from unittest import TestCase
 from bank_package.bank import Bank
+from exceptions.account_number_not_found_error import AccountNumberNotFoundError
 
 
 class BankTest(TestCase):
@@ -25,7 +26,7 @@ class BankTest(TestCase):
     def test_that_my_bank_cannot_find_account_number(self):
         bank = Bank()
         bank.create_account("David", "Adeleke", "Pin")
-        with self.assertRaises(TypeError):
+        with self.assertRaises(AccountNumberNotFoundError):
             bank.find_account_number("10320")
 
     def test_that_my_bank_can_deposit_to_an_account(self):
@@ -72,6 +73,6 @@ class BankTest(TestCase):
         self.assertEqual("10323", bank.find_account_number("10323").get_account_number())
 
         bank.remove_account("10323", "Pin3")
-        with self.assertRaises(TypeError):
+        with self.assertRaises(AccountNumberNotFoundError):
             bank.find_account_number("10323")
         self.assertEqual(5, bank.get_number_of_customers())

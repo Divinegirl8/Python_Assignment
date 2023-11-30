@@ -1,4 +1,7 @@
 from decimal import Decimal, getcontext
+from exceptions.deposit_amount_less_than_0_error import DepositAmountLessThanZeroError
+from exceptions.validate_pin_error import PinError
+from exceptions.withdrawal_amount_greater_than_balance_error import AmountGreaterThanBalanceError
 
 
 class Account:
@@ -14,7 +17,7 @@ class Account:
             amount_decimal = Decimal(str(amount))
             self.__balance += amount_decimal
         else:
-            raise ValueError("Amount should be greater than 0")
+            raise DepositAmountLessThanZeroError("Amount should be greater than 0")
 
     def check_balance(self, pin):
         Account.validate_pin(self, pin)
@@ -22,7 +25,7 @@ class Account:
 
     def validate_pin(self, pin):
         if self.__pin != pin:
-            raise RuntimeError("Invalid pin")
+            raise PinError("Invalid pin")
         return self.__pin == pin
 
     def get_account_number(self):
@@ -34,4 +37,14 @@ class Account:
             amount_decimal = Decimal(str(amount))
             self.__balance -= amount_decimal
         else:
-            raise ValueError("Amount is greater than your account balance")
+            raise AmountGreaterThanBalanceError("Amount is greater than your account balance")
+
+    def __str__(self):
+        return f"""
+==========================================
+Account Name: {self.__name}        
+Account Number : {self.__account_number}
+Pin : Unavailable
+Account Balance: {self.__balance}    
+==========================================   
+        """
