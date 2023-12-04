@@ -1,4 +1,15 @@
+import datetime
+
 from diary_package.entry import Entry
+from diary_package.exceptions.invalid_password_error import InvalidPasswordError
+from diary_package.exceptions.diary_is_locked_error import DiaryIsLockedError
+from diary_package.exceptions.entry_id_not_found_error import EntryIdNotFoundError
+from diary_package.exceptions.is_empty_error import IsEmptyError
+
+
+def empty_body_or_title_error(title: str, body: str):
+    if (not title) or (not body):
+        raise IsEmptyError("Error!!! Input cannot be empty")
 
 
 class Diary:
@@ -15,7 +26,7 @@ class Diary:
 
     def validate_password(self, password):
         if self.__password != password:
-            raise RuntimeError("Invalid password")
+            raise InvalidPasswordError("Invalid password")
         return self.__password == password
 
     def is_locked(self):
@@ -25,11 +36,13 @@ class Diary:
         self.__is_locked = True
 
     def create_entry(self, title, body):
-        if self.__is_locked:
-            raise RuntimeError("cannot create entry because diary is locked")
+        self.diary_is_locked()
+        empty_body_or_title_error(title, body)
         self.__entry_size += 1
         entry = Entry(self.generate_entry_id(), title, body)
+        entry.set_date_created(datetime.datetime.now())
         self.__entries.append(entry)
+        return entry
 
     def get_number_of_entry(self):
         return len(self.__entries)
@@ -37,29 +50,27 @@ class Diary:
     def generate_entry_id(self):
         return int(f"19{self.__entry_size}")
 
+    def diary_is_locked(self):
+        if self.__is_locked:
+            raise DiaryIsLockedError("diary is locked")
+
     def delete_entry(self, id_number):
         self.__entries.remove(self.find_entry_by_id(id_number))
 
     def find_entry_by_id(self, id_number):
-        if self.__is_locked:
-            raise RuntimeError("cannot create entry because diary is locked")
+        self.diary_is_locked()
         for value in self.__entries:
             if value.get_id() == id_number:
                 return value
-        raise RuntimeError("Entry id not found")
+        raise EntryIdNotFoundError("Entry id not found")
 
     def update(self, id_number, title, body):
-        if self.__is_locked:
-            raise RuntimeError("cannot create entry because diary is locked")
+        self.diary_is_locked()
+        empty_body_or_title_error(title, body)
         entry = self.find_entry_by_id(id_number)
-        entry.edit_entry(title, body)
-        self.__entries[self.find_index_of(id_number)] = entry
-
-    def find_index_of(self, id_number):
-        for index, value in enumerate(self.__entries):
-            if value.get_id() == id_number:
-                return index
-        raise RuntimeError("Entry id not found")
+        entry.set_title(title)
+        entry_body = entry.get_body() + "\n" + body
+        entry.set_body(entry_body)
 
     def get_username(self):
         return self.__username

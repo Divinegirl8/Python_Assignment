@@ -17,5 +17,5 @@ def get_geo_political_zones(value):
             return key
 
 
-print(get_geo_political_zones("oyo"))
+
 

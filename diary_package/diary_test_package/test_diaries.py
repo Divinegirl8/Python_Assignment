@@ -1,6 +1,8 @@
 from unittest import TestCase
 from diary_package.diaries import Diaries
 from diary_package.diary import Diary
+from diary_package.exceptions.username_exist_error import UserNameExistError
+from diary_package.exceptions.diary_not_found_error import DiaryNotFoundError
 
 
 class DiariesTest(TestCase):
@@ -17,13 +19,19 @@ class DiariesTest(TestCase):
         diary = diaries.find_diary_by_username("username2")
         self.assertEqual("username2", diary.get_username())
 
+    def test_that_my_diaries_can_throw_error_if_username_exist(self):
+        diaries = Diaries()
+        diaries.add("username", "password")
+        with self.assertRaises(UserNameExistError):
+            diaries.add("username", "password")
+
     def test_that_my_diaries_can_raise_exception_if_user_name_not_found(self):
         diaries = Diaries()
         diaries.add("username", "password")
         diaries.add("username2", "password2")
         self.assertEqual(2, diaries.get_diaries_size())
 
-        with self.assertRaises(RuntimeError):
+        with self.assertRaises(DiaryNotFoundError):
             diaries.find_diary_by_username("user").get_username()
 
     def test_that_my_diaries_can_delete_diary(self):
@@ -41,9 +49,5 @@ class DiariesTest(TestCase):
         diaries.add("username2", "password2")
         self.assertEqual(2, diaries.get_diaries_size())
 
-        with self.assertRaises(RuntimeError):
+        with self.assertRaises(DiaryNotFoundError):
             diaries.delete_diary("username", "password2")
-
-
-
-

@@ -1,5 +1,8 @@
 from unittest import TestCase
 from diary_package.diary import Diary
+from diary_package.exceptions.invalid_password_error import InvalidPasswordError
+from diary_package.exceptions.diary_is_locked_error import DiaryIsLockedError
+from diary_package.exceptions.entry_id_not_found_error import EntryIdNotFoundError
 
 
 class DiaryTest(TestCase):
@@ -12,7 +15,7 @@ class DiaryTest(TestCase):
     def test_that_my_diary_will_throw_an_exception_for_unlocking_with_wrong_password(self):
         diary = Diary("username", "password")
         self.assertTrue(diary.is_locked())
-        with self.assertRaises(RuntimeError):
+        with self.assertRaises(InvalidPasswordError):
             diary.unlock_diary("pass")
 
     def test_that_my_diary_can_lock(self):
@@ -83,7 +86,7 @@ class DiaryTest(TestCase):
         diary.lock_diary()
         self.assertTrue(diary.is_locked())
 
-        with self.assertRaises(RuntimeError):
+        with self.assertRaises(DiaryIsLockedError):
             diary.create_entry("title", "body")
 
     def test_that_my_diary_cannot_delete_an_entry_that_has_been_deleted(self):
@@ -94,7 +97,7 @@ class DiaryTest(TestCase):
         diary.create_entry("title", "body")
         diary.delete_entry(191)
 
-        with self.assertRaises(RuntimeError):
+        with self.assertRaises(EntryIdNotFoundError):
             diary.delete_entry(191)
 
     def test_that_my_diary_can_find_an_entry_by_id(self):
@@ -126,7 +129,7 @@ class DiaryTest(TestCase):
         diary.create_entry("title", "body")
         diary.create_entry("title", "body")
 
-        with self.assertRaises(RuntimeError):
+        with self.assertRaises(EntryIdNotFoundError):
             diary.find_entry_by_id(195)
 
     def test_that_my_diary_will_raise_error_if_locked_and_trying_to_delete_an_entry(self):
@@ -142,7 +145,7 @@ class DiaryTest(TestCase):
         diary.lock_diary()
         self.assertTrue(diary.is_locked())
 
-        with self.assertRaises(RuntimeError):
+        with self.assertRaises(DiaryIsLockedError):
             diary.delete_entry(192)
 
     def test_that_my_diary_can_update_previous_entry(self):
@@ -158,14 +161,7 @@ class DiaryTest(TestCase):
 
         diary.lock_diary()
 
-    def test_that_my_diary_can_find_index_of_entry_in_the_list(self):
-        diary = Diary("username", "password")
-        diary.unlock_diary("password")
-        self.assertFalse(diary.is_locked())
-        diary.create_entry("title", "body")
-        diary.create_entry("title", "body")
 
-        self.assertEqual(1,diary.find_index_of(192))
 
 
 

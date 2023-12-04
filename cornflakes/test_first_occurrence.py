@@ -8,4 +8,4 @@ class Test(TestCase):
         self.assertEqual("tee/h", replace_occurrence("teeth", "/"))
         self.assertEqual("rest", replace_occurrence("rest", "|"))
         self.assertEqual("ma--al", replace_occurrence("mammal", "-"))
-        self.assertEqual("tesi", replace_occurrence("test", "i"))
+        self.assertEqual("tesit", replace_occurrence("testt", "i"))
