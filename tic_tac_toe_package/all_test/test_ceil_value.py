@@ -1,4 +1,4 @@
-from tic_tac_toe_package.ceil_value import CeilValue
+from tic_tac_toe_package.cell_value import CeilValue
 from unittest import TestCase
 
 
